@@ -1,5 +1,8 @@
 package tasks;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class T01 {
@@ -15,6 +18,15 @@ public class T01 {
         System.out.print("Bir string gir: ");
         String str = scan.nextLine();
         String[] words = str.split(" ");
+        List<String> list = new ArrayList<String>();
+
+        // list'e eklemek istersen
+        for (int i = 0; i < words.length; i++) {
+            list.add(words[i]);
+        }
+
+        System.out.println(list);
+        System.out.println(Arrays.toString(words));
 
         String enUzunKelime = enUzunKelimeBulanMethod(words);
         System.out.println(enUzunKelime);
