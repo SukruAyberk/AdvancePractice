@@ -8,7 +8,7 @@ public class Methodlar {
 
     static Scanner scan = new Scanner(System.in);
     static List<Kisi> ogrenciLists = new ArrayList<Kisi>();
-    static List<Object> ogretmenLists = new ArrayList<Object>();
+    static List<Kisi> ogretmenLists = new ArrayList<Kisi>();
     static String kisiTuru;
 
     public static void panel() {
@@ -40,7 +40,7 @@ public class Methodlar {
 
     private static void menu() {
         System.out.println(kisiTuru + " için işleminizi seçin");
-        System.out.println("1-Ekleme\n2-Arama\n3-Listeleme\n4-Silme\n5-Ana Menü");
+        System.out.println("1-Ekleme\n2-Arama\n3-Listeleme\n4-Silme\n5-Ana Menü\n6-Cıkış");
         int secim = scan.nextInt();
 
         switch (secim) {
@@ -49,7 +49,7 @@ public class Methodlar {
                 menu();
                 break;
             case 2:
-
+                arama();
                 menu();
                 break;
             case 3:
@@ -63,16 +63,65 @@ public class Methodlar {
             case 5:
                 panel();
                 break;
+            case 6:
+                cikis();
+                break;
+            default:
+                System.out.println("Hatalı giriş!");
+                menu();
+
         }
 
     }
 
+    private static void arama() {
+
+        System.out.print("Aramak istediğiniz ismi yazın: ");
+        scan.nextLine();
+        String kimlikNo = scan.nextLine();
+
+        if (kisiTuru.equals("OGRENCI")) {
+
+
+            for (int i = 0; i < ogrenciLists.size(); i++) {
+                if (ogrenciLists.get(i).getKimlikNo().equals(kimlikNo)) {
+                    System.out.println(ogrenciLists.get(i));
+                    break;
+                } else {
+                    System.out.println("Öğrenci kaydı bulunamadı!");
+                }
+            }
+        } else if (kisiTuru.equals("OGRETMEN")) {
+            for (int i = 0; i < ogretmenLists.size(); i++) {
+                if (ogretmenLists.get(i).getKimlikNo().equals(kimlikNo)) {
+                    System.out.println(ogretmenLists.get(i));
+                    break;
+                } else {
+                    System.out.println("Öğretmen kaydı bulunamadı!");
+                }
+            }
+        }
+    }
+
     private static void listeleme() {
 
+        if (kisiTuru.equals("OGRENCI")) {
+            for (int i = 0; i < ogrenciLists.size(); i++) {
+                System.out.println(ogrenciLists.get(i));
+            }
+        } else if (kisiTuru.equals("OGRETMEN")) {
+            for (int i = 0; i < ogretmenLists.size(); i++) {
+                System.out.println(ogretmenLists.get(i));
+            }
+        } else {
+            System.out.println("Hatalı seçim");
+            listeleme();
+        }
+/*
         System.out.println("Aşağıdan seçiminizi yapın");
         System.out.println("1-Öğrenci\n2-Öğretmen");
         String secim = "";
-            secim = scan.next();
+        secim = scan.next();
         if (secim.equalsIgnoreCase("1")) {
             for (int i = 0; i < ogrenciLists.size(); i++) {
                 System.out.println(ogrenciLists.get(i));
@@ -85,7 +134,7 @@ public class Methodlar {
             System.out.println("Hatalı seçim");
             listeleme();
         }
-
+*/
     }
 
     private static void ekleme() {
@@ -94,7 +143,7 @@ public class Methodlar {
         if (kisiTuru.equalsIgnoreCase("OGRENCI")) {
 
             System.out.print("Ad-soyad girin: ");
-            scan.nextLine();
+            scan.nextLine().toUpperCase();
             String adSoyad = scan.nextLine();
 
             System.out.print("Kimlik no: ");
@@ -107,7 +156,7 @@ public class Methodlar {
             String no = scan.next();
 
             System.out.print("Sınıf: ");
-            String sinif = scan.next();
+            String sinif = scan.next().toUpperCase();
 
             Ogrenci ogrenci = new Ogrenci(adSoyad, kimlikNo, yas, no, sinif);
             ogrenciLists.add(ogrenci);
@@ -117,7 +166,7 @@ public class Methodlar {
 
             System.out.print("Ad-soyad girin: ");
             scan.nextLine();
-            String adSoyad = scan.nextLine();
+            String adSoyad = scan.nextLine().toUpperCase();
 
             System.out.print("Kimlik no: ");
             String kimlikNo = scan.next();
@@ -129,13 +178,19 @@ public class Methodlar {
             String sicilNo = scan.next();
 
             System.out.print("Branş: ");
-            String brans = scan.next();
+            String brans = scan.next().toUpperCase();
 
             Ogretmen ogretmen = new Ogretmen(adSoyad, kimlikNo, yas, sicilNo, brans);
             ogretmenLists.add(ogretmen);
 
 
         }
+
+    }
+
+    public static void main(String[] args) {
+
+        panel();
 
     }
 
