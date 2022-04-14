@@ -1,30 +1,30 @@
-----------Öğrenci Not Sistemi-----------
+1.	Bu programda, Öğrenci ve Öğretmen Kayıtları ile ilgili işlemler yapılabilmelidir. Kayıtlarda şu bilgiler olabilmelidir. 
 
-----------Course Class Özellikleri :
+	Öğretmen: Ad-Soyad,  kimlik No, yaş, bölüm, ve sicil No bilgileri içermelidir.
+	Öğrenci: Ad-Soyad,  kimlik No, yaş, numara, sınıf bilgileri içermelidir.
 
-fields (variable) : name,code,prefix,note,Teacher
-Methods : Course() , addTeacher() , printTeacher()
+2.	Program başladığında Kullanıcıya, Öğretmen ve Öğrenci işlemlerini seçebilmesi için aşağıdaki gibi bir menü gösterilsin.	
 
-----------Teacher Class Özellikleri :
+	====================================
+	 ÖĞRENCİ VE ÖĞRETMEN YÖNETİM PANELİ
+	====================================
+	 1- ÖĞRENCİ İŞLEMLERİ
+	 2- ÖĞRETMEN İŞLEMLERİ
+	 Q- ÇIKIŞ
 
-fields : name,mpno,branch
-Methods : Teacher()
+3.	Seçilen Kişi türüne göre aşağıdaki işlemleri gösteren bir alt menü daha gösterilsin.
 
-----------Student Class Özellikleri :
+	============= İŞLEMLER =============
+		 1-EKLEME			 
+		 2-ARAMA
+		 3-LİSTELEME
+		 4-SİLME
+		 5-ANA MENÜ
+		 Q-ÇIKIŞ
+		
+	SEÇİMİNİZ:
 
-fields : name,stuNo,classes,course1,course2,course3,avarage,isPass
-Methods : Student(), addBulkExamNote(), isPass(), calcAvarage(), printNote()
+4.	İşlemler menüsünde seçilen işleme göre bir önceki menüde seçilen Kişi türü ile ilgili ekleme, kimlik no ile silme ve arama, var olan tüm kişileri listeleme gibi işlemler yapılabilmelidir. Bunun yanında bir üst menüye dönme veya çıkış işlemleri de yapılabilmelidir.
 
 
------------TASK
-Course class'ında derse ait sözlü notu kısmını girin ve ortalamaya etkisini
-her ders için ayrı ayrı belirtin. Sözlü notların ıda ortalamaya etkileme
-yüzdesi ile dahil edin.
-
-Örnek : Fizik dersine ait sözlü notunun ortalamaya etkisi %20 ise
-sınav notunun etkisi %80'dir.
-
-Öğrenci sözlüden 90, sınavdan 60 almış ise, o dersin
-genel ortalamaya etkisi şu şekilde hesaplanır :
-
-Fizik Ortalaması : (90 * 0.20) + (60* 0.80);
+NOT: PROJEYİ YAPARKEN MÜMKÜN OLAN EN KISA KODLARI YAZMAK İÇİN NESNE YÖNELİMLİ PROGRAMLAMANIN BİZE SAĞLADIĞI İMKANLARI KULLANMAYA DİKKAT EDİNİZ.
