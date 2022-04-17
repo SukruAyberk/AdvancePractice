@@ -24,12 +24,14 @@ public class Q01 {
         int bolunen = 0;
         int toplam = 0;
 
-        for (int i = 100; i >= 0; i--)
+        for (int i = 100; i >= 0 ; i--) {
             if (i % 13 == 0) {
                 bolunen = i;
                 System.out.println(bolunen);
                 toplam += i;
             }
+        }
+
         System.out.println("Toplam = " + toplam);
     }
 }
