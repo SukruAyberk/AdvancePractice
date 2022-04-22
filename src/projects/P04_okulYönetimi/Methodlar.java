@@ -150,7 +150,6 @@ public class Methodlar {
             Ogretmen ogretmen = new Ogretmen(adSoyad, kimlikNo, yas, sicilNo, brans);
             ogretmenLists.add(ogretmen);
 
-
         }
 
     }
