@@ -11,7 +11,7 @@ public class Kare extends Dikdortgen {
 
     @Override
     public String toString() {
-        return "Kare {" + "uzunKenar=" + uzunKenar + ", kisaKenar=" + kisaKenar + " Alan= " + alanHesapla() + " Çevre= " + cevreHesapla() + '}';
+        return "Kare {" + "uzunKenar= " + uzunKenar + ", kisaKenar= " + kisaKenar + " Alan= " + alanHesapla() + " Çevre= " + cevreHesapla() + '}';
     }
 
 }
