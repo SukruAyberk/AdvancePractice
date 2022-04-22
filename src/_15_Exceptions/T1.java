@@ -7,17 +7,25 @@ public class T1 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Vize notunu girin: ");
-        int v = scanner.nextInt();
+        int v = 0;
+        int f = 0;
 
-        System.out.println("Final notunu girin: ");
-        int f = scanner.nextInt();
+        try {
+            System.out.println("Vize notunu girin: ");
+            v = scanner.nextInt();
 
-        if (v < 0 || v > 100 || f < 0 || f > 100) {
+            System.out.println("Final notunu girin: ");
+            f = scanner.nextInt();
+
+            if (v < 0 || v > 100 || f < 0 || f > 100) {
+                throw new ArithmeticException();
+            } else {
+                double avg = (0.4 * v) + (0.6 * f);
+                System.out.println("Ortalama: " + avg);
+            }
+
+        } catch (ArithmeticException e) {
             System.out.println("Notlar 0-100 arasında olmalı");
-        } else {
-            double avg = (0.4 * v) + (0.6 * f);
-            System.out.println("Ortalama: " + avg);
         }
 
 
